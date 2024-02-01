@@ -21,3 +21,15 @@ resource "aws_s3_bucket" "mt4-maxime" {
     Environment = "Dev"
   }
 }
+
+resource "aws_lightsail_instance" "my_lightsail_instance" {
+  name              = "mt4-maxime"
+  availability_zone = "us-west-2a"
+  blueprint_id      = "amazon_linux_2"
+  bundle_id         = "nano_2_0"
+
+  tags = {
+    Name        = "Lightsail Instance"
+    Environment = "Dev"
+  }
+}
